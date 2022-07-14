@@ -1,0 +1,120 @@
+#### TickMastTest setUp 
+$#### TickMastTest service1 {city=} 
+-**** TickMastService::searchData -- {city=} 
+8TickMastService::searchData -- countrycode NOT PRESENT 
+@@@@ TickMastTest service1 -- exception org.example.TickMastException: TickMastService::searchData -- countrycode NOT PRESENT 
+#### TickMastTest tearDown 
+#### TickMastTest setUp 
+-#### TickMastTest service2 {countrycode=ua} 
+6**** TickMastService::searchData -- {countrycode=ua} 
+<TickMastService::searchData -- countrycode NOT VALID -- ua 
+ƒ@@@@ TickMastTest service2 -- exception org.example.TickMastException: TickMastService::searchData -- countrycode NOT VALID -- ua 
+#### TickMastTest tearDown 
+#### TickMastTest setUp 
+-#### TickMastTest service3 {countrycode=it} 
+6**** TickMastService::searchData -- {countrycode=it} 
+:ReprEventParser::JsonToEventParse -- _embedded NOT FOUND 
+@@@@ TickMastTest service3 -- exception org.example.TickMastException: ReprEventParser::JsonToEventParse -- _embedded NOT FOUND 
+ #### TickMastTest tearDown 
+#### TickMastTest setUp 
+4#### TickMastTest service4 {city=, countrycode=es} 
+=**** TickMastService::searchData -- {city=, countrycode=es} 
+EventToJsonCopy --  100 
+#### TickMastTest tearDown 
+#### TickMastTest setUp 
+4#### TickMastTest service5 {city=, countrycode=be} 
+=**** TickMastService::searchStat -- {city=, countrycode=be} 
+1Table    0 - City Annevoie-Rouillon - Freq    3 
+&Table    1 - City Bilzen - Freq   25 
+(Table    2 - City Brussels - Freq   56 
+-Table    3 - City Francorchamps - Freq    8 
+%Table    4 - City Ittre - Freq    2 
+*Table    5 - City LouveignÃ© - Freq    1 
+*Table    6 - City Nieuwpoort - Freq    2 
+(Table    7 - City Oostende - Freq    3 
+8{"min":1,"avg":12.5,"field":"city","max":56,"sum":100} 
+EventToJsonFilter --  100 
+#### TickMastTest tearDown 
+#### TickMastTest setUp 
+7#### TickMastTest service6 {countrycode=at, weekday=} 
+@**** TickMastService::searchStat -- {countrycode=at, weekday=} 
+)Table    0 - Weekday Sunday - Freq    6 
+)Table    1 - Weekday Monday - Freq    4 
+*Table    2 - Weekday Tuesday - Freq    7 
+,Table    3 - Weekday Wednesday - Freq    4 
++Table    4 - Weekday Thursday - Freq    2 
+)Table    5 - Weekday Friday - Freq    4 
++Table    6 - Weekday Saturday - Freq    8 
+8{"min":2,"avg":5.0,"field":"weekday","max":8,"sum":35} 
+EventToJsonFilter --   35 
+#### TickMastTest tearDown 
+#### TickMastTest setUp 
+>#### TickMastTest service7 {city=, countrycode=de, weekday=} 
+G**** TickMastService::searchStat -- {city=, countrycode=de, weekday=} 
+?Table    0 -- city Aachen -- weekday Friday -- frequency    1 
+?Table    1 -- city Berlin -- weekday Sunday -- frequency    2 
+@Table    2 -- city Berlin -- weekday Tuesday -- frequency    2 
+BTable    3 -- city Berlin -- weekday Wednesday -- frequency    7 
+ATable    4 -- city Berlin -- weekday Thursday -- frequency    3 
+?Table    5 -- city Berlin -- weekday Friday -- frequency    6 
+ATable    6 -- city Berlin -- weekday Saturday -- frequency    3 
+BTable    7 -- city Bielefeld -- weekday Monday -- frequency    1 
+=Table    8 -- city Bonn -- weekday Friday -- frequency    1 
+@Table    9 -- city Cologne -- weekday Sunday -- frequency    5 
+@Table   10 -- city Cologne -- weekday Monday -- frequency    4 
+ATable   11 -- city Cologne -- weekday Tuesday -- frequency    5 
+CTable   12 -- city Cologne -- weekday Wednesday -- frequency    4 
+BTable   13 -- city Cologne -- weekday Thursday -- frequency    8 
+@Table   14 -- city Cologne -- weekday Friday -- frequency    8 
+BTable   15 -- city Cologne -- weekday Saturday -- frequency    4 
+DTable   16 -- city Dortmund -- weekday Wednesday -- frequency    1 
+BTable   17 -- city Dresden -- weekday Saturday -- frequency    2 
+DTable   18 -- city DÃ¼sseldorf -- weekday Sunday -- frequency    2 
+FTable   19 -- city DÃ¼sseldorf -- weekday Saturday -- frequency    1 
+?Table   20 -- city Essen -- weekday Tuesday -- frequency    1 
+JTable   21 -- city Frankfurt am Main -- weekday Sunday -- frequency    1 
+KTable   22 -- city Frankfurt am Main -- weekday Tuesday -- frequency    1 
+JTable   23 -- city Frankfurt am Main -- weekday Friday -- frequency    5 
+LTable   24 -- city Frankfurt am Main -- weekday Saturday -- frequency    2 
+ATable   25 -- city Fulda -- weekday Wednesday -- frequency    1 
+@Table   26 -- city Hagen -- weekday Thursday -- frequency    1 
+CTable   27 -- city Hamburg -- weekday Wednesday -- frequency    1 
+BTable   28 -- city Hamburg -- weekday Thursday -- frequency    1 
+@Table   29 -- city Hamburg -- weekday Friday -- frequency    1 
+ATable   30 -- city Hannover -- weekday Friday -- frequency    1 
+LTable   31 -- city Koblenz am Rhein -- weekday Wednesday -- frequency    1 
+@Table   32 -- city Leipzig -- weekday Sunday -- frequency    1 
+?Table   33 -- city Munich -- weekday Sunday -- frequency    2 
+ATable   34 -- city Munich -- weekday Thursday -- frequency    1 
+ATable   35 -- city Munich -- weekday Saturday -- frequency    1 
+KTable   36 -- city MÃ¶nchengladbach -- weekday Thursday -- frequency    2 
+@Table   37 -- city Salem -- weekday Thursday -- frequency    1 
+<Table   38 -- city Ulm -- weekday Sunday -- frequency    1 
+<Table   39 -- city Ulm -- weekday Friday -- frequency    1 
+>Table   40 -- city Ulm -- weekday Saturday -- frequency    1 
+DTable   41 -- city Wiesbaden -- weekday Thursday -- frequency    1 
+BTable   42 -- city Wuppertal -- weekday Sunday -- frequency    1 
+Ä{"minDay":{"city":"Aachen","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Aachen","weekday":"Friday","frequency":1},"sum":1,"value":"Aachen"} 
+Ç{"minDay":{"city":"Berlin","weekday":"Monday","frequency":0},"min":0,"avg":3.2857144,"field":"city","max":7,"maxDay":{"city":"Berlin","weekday":"Wednesday","frequency":7},"sum":23,"value":"Berlin"} 
+Í{"minDay":{"city":"Bielefeld","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Bielefeld","weekday":"Monday","frequency":1},"sum":1,"value":"Bielefeld"} 
+¾{"minDay":{"city":"Bonn","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Bonn","weekday":"Friday","frequency":1},"sum":1,"value":"Bonn"} 
+È{"minDay":{"city":"Cologne","weekday":"Monday","frequency":4},"min":4,"avg":5.428571,"field":"city","max":8,"maxDay":{"city":"Cologne","weekday":"Thursday","frequency":8},"sum":38,"value":"Cologne"} 
+Í{"minDay":{"city":"Dortmund","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Dortmund","weekday":"Wednesday","frequency":1},"sum":1,"value":"Dortmund"} 
+È{"minDay":{"city":"Dresden","weekday":"Sunday","frequency":0},"min":0,"avg":0.2857143,"field":"city","max":2,"maxDay":{"city":"Dresden","weekday":"Saturday","frequency":2},"sum":2,"value":"Dresden"} 
+Ù{"minDay":{"city":"DÃƒÂ¼sseldorf","weekday":"Monday","frequency":0},"min":0,"avg":0.42857143,"field":"city","max":2,"maxDay":{"city":"DÃƒÂ¼sseldorf","weekday":"Sunday","frequency":2},"sum":3,"value":"DÃƒÂ¼sseldorf"} 
+Â{"minDay":{"city":"Essen","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Essen","weekday":"Tuesday","frequency":1},"sum":1,"value":"Essen"} 
+ä{"minDay":{"city":"Frankfurt am Main","weekday":"Monday","frequency":0},"min":0,"avg":1.2857143,"field":"city","max":5,"maxDay":{"city":"Frankfurt am Main","weekday":"Friday","frequency":5},"sum":9,"value":"Frankfurt am Main"} 
+Ä{"minDay":{"city":"Fulda","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Fulda","weekday":"Wednesday","frequency":1},"sum":1,"value":"Fulda"} 
+Ã{"minDay":{"city":"Hagen","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Hagen","weekday":"Thursday","frequency":1},"sum":1,"value":"Hagen"} 
+Ê{"minDay":{"city":"Hamburg","weekday":"Sunday","frequency":0},"min":0,"avg":0.42857143,"field":"city","max":1,"maxDay":{"city":"Hamburg","weekday":"Wednesday","frequency":1},"sum":3,"value":"Hamburg"} 
+Ê{"minDay":{"city":"Hannover","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Hannover","weekday":"Friday","frequency":1},"sum":1,"value":"Hannover"} 
+å{"minDay":{"city":"Koblenz am Rhein","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Koblenz am Rhein","weekday":"Wednesday","frequency":1},"sum":1,"value":"Koblenz am Rhein"} 
+Ç{"minDay":{"city":"Leipzig","weekday":"Monday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Leipzig","weekday":"Sunday","frequency":1},"sum":1,"value":"Leipzig"} 
+Ã{"minDay":{"city":"Munich","weekday":"Monday","frequency":0},"min":0,"avg":0.5714286,"field":"city","max":2,"maxDay":{"city":"Munich","weekday":"Sunday","frequency":2},"sum":4,"value":"Munich"} 
+é{"minDay":{"city":"MÃƒÂ¶nchengladbach","weekday":"Sunday","frequency":0},"min":0,"avg":0.2857143,"field":"city","max":2,"maxDay":{"city":"MÃƒÂ¶nchengladbach","weekday":"Thursday","frequency":2},"sum":2,"value":"MÃƒÂ¶nchengladbach"} 
+Ã{"minDay":{"city":"Salem","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Salem","weekday":"Thursday","frequency":1},"sum":1,"value":"Salem"} 
+»{"minDay":{"city":"Ulm","weekday":"Monday","frequency":0},"min":0,"avg":0.42857143,"field":"city","max":1,"maxDay":{"city":"Ulm","weekday":"Sunday","frequency":1},"sum":3,"value":"Ulm"} 
+Ï{"minDay":{"city":"Wiesbaden","weekday":"Sunday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Wiesbaden","weekday":"Thursday","frequency":1},"sum":1,"value":"Wiesbaden"} 
+Í{"minDay":{"city":"Wuppertal","weekday":"Monday","frequency":0},"min":0,"avg":0.14285715,"field":"city","max":1,"maxDay":{"city":"Wuppertal","weekday":"Sunday","frequency":1},"sum":1,"value":"Wuppertal"} 
+EventToJsonFilter --  100 
+#### TickMastTest tearDown 
